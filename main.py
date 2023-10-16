@@ -185,9 +185,9 @@ def creategui():
   root.title("GUI")
 
   cursor.execute(f"SELECT fn FROM database WHERE username = '{username}'")
-  firstname = cursor.fetchone()
+  firstname = str(cursor.fetchone())
 
-  messagebox.showinfo("Welcome", f"Welcome {firstname}")
+  messagebox.showinfo("Welcome", f"Welcome {firstname[2:-3]}")
 
   # ------------------------------------------
 
